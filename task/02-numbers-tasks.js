@@ -22,7 +22,8 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-    throw new Error('Not implemented');
+    return (width*height);
+    // throw new Error('Not implemented');
 }
 
 
@@ -38,7 +39,9 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCicleCircumference(radius) {
-    throw new Error('Not implemented');
+    return (Math.PI *(2 * radius));
+
+    // throw new Error('Not implemented');
 }
 
 /**
@@ -54,7 +57,8 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-    throw new Error('Not implemented');
+    return((value1 + value2) / 2);
+    // throw new Error('Not implemented');
 }
 
 /**
@@ -73,7 +77,9 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    var res = Math.sqrt(((x2 - x1) ** 2) + ((y2 - y1) **2));
+    return (res);
+    // throw new Error('Not implemented');
 }
 
 /**
@@ -127,7 +133,8 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-    throw new Error('Not implemented');
+    return (num % 10);
+    // throw new Error('Not implemented');
 }
 
 
@@ -143,7 +150,8 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-    throw new Error('Not implemented');
+    return (Number(value));
+    // throw new Error('Not implemented');
 }
 
 /**
@@ -160,7 +168,8 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a,b,c) {
-    throw new Error('Not implemented');
+    return(Math.sqrt(a**2 + b**2 + c**2));
+    // throw new Error('Not implemented');
 }
 
 /**
@@ -202,7 +211,19 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-    throw new Error('Not implemented');
+    var flag = 0;
+    for(let i = 2; i < n; i++){
+        if (n % i == 0){
+            flag = 1;
+            break;
+        }
+    }
+    if(flag == 1){
+        return (false);
+    }else{
+        return (true);
+    }    
+    // throw new Error('Not implemented');
 }
 
 /**

@@ -23,7 +23,8 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-   throw new Error('Not implemented');
+   return (arr.indexOf(value));
+   // throw new Error('Not implemented');
 }
 
 /**
@@ -70,7 +71,14 @@ function doubleArray(arr) {
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
-   throw new Error('Not implemented');
+   var res = [];
+   for(let i=0;i<arr.length;i++){
+      if(arr[i]>0){
+         res.push(arr[i]);
+      }
+   }
+   return res;
+   // throw new Error('Not implemented');
 }
 
 /**
@@ -85,7 +93,8 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
-   throw new Error('Not implemented');
+
+   // throw new Error('Not implemented');
 }
 
 /**
@@ -116,7 +125,9 @@ function removeFalsyValues(arr) {
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
 function getUpperCaseStrings(arr) {
-   throw new Error('Not implemented');
+   const res = arr.map(word => word.toUpperCase());
+   return res;
+   // throw new Error('Not implemented');
 }
 
 
