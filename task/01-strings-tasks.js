@@ -23,7 +23,6 @@
  */
 function concatenateStrings(value1, value2) {
     return (value1.concat(value2));
-    // throw new Error('Not implemented');
 }
 
 
@@ -40,7 +39,6 @@ function concatenateStrings(value1, value2) {
  */
 function getStringLength(value) {
     return (value.length);
-    // throw new Error('Not implemented');
 }
 
 /**
@@ -58,7 +56,6 @@ function getStringLength(value) {
  */
 function getStringFromTemplate(firstName, lastName) {
     return (`Hello, ${firstName} ${lastName}!`);
-    // throw new Error('Not implemented');
 }
 
 /**
@@ -73,7 +70,6 @@ function getStringFromTemplate(firstName, lastName) {
  */
 function extractNameFromTemplate(value) {
     return (value.substring(6));
-    // throw new Error('Not implemented');
 }
 
 
@@ -89,7 +85,6 @@ function extractNameFromTemplate(value) {
  */
 function getFirstChar(value) {
     return (value.at(0));
-    // throw new Error('Not implemented');
 }
 
 /**
@@ -105,7 +100,6 @@ function getFirstChar(value) {
  */
 function removeLeadingAndTrailingWhitespaces(value) {
     return (value.trim());
-    // throw new Error('Not implemented');
 }
 
 /**
@@ -121,7 +115,6 @@ function removeLeadingAndTrailingWhitespaces(value) {
  */
 function repeatString(value, count) {
     return (value.repeat(count));
-    // throw new Error('Not implemented');
 }
 
 /**
@@ -138,7 +131,6 @@ function repeatString(value, count) {
  */
 function removeFirstOccurrences(str, value) {
     return (str.replace(value,""));
-    // throw new Error('Not implemented');
 }
 
 /**
@@ -154,7 +146,6 @@ function removeFirstOccurrences(str, value) {
  */
 function unbracketTag(str) {
     return (str.slice(1,-1));
-    // throw new Error('Not implemented');
 }
 
 
@@ -170,7 +161,6 @@ function unbracketTag(str) {
  */
 function convertToUpperCase(str) {
     return (str.toUpperCase());
-    // throw new Error('Not implemented');
 }
 
 /**
@@ -185,7 +175,6 @@ function convertToUpperCase(str) {
  */
 function extractEmails(str) {
     return (str.split(';'));
-    // throw new Error('Not implemented');
 }
 
 /**
@@ -253,7 +242,6 @@ function isString(value) {
 		return true; 
 	} 
 	return false;
-    // throw new Error('Not implemented');
 }
 
 
