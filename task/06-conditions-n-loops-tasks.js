@@ -30,7 +30,11 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    if(num%3===0 && num%5===0) return 'FizzBuzz';
+    else if(num%3===0) return 'Fizz';
+    else if(num%5===0) return 'Buzz';
+    else return num;
+    // throw new Error('Not implemented');
 }
 
 
@@ -46,7 +50,13 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+    var factorial = 1;
+    for(let i = 2;i <= n; i++)
+    {
+        factorial *= i;
+    }
+    return factorial;
+    // throw new Error('Not implemented');
 }
 
 
@@ -63,7 +73,13 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    let sum=0;
+    for(let i=n1;i<=n2;i++)
+    {
+        sum+=i;
+    }
+    return sum;
+    // throw new Error('Not implemented');
 }
 
 
@@ -82,7 +98,9 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-    throw new Error('Not implemented');
+    if((a+b)<=c || (a+c)<=b || (c+b)<=a) return false;
+    return true;
+    //throw new Error('Not implemented');
 }
 
 
@@ -166,7 +184,15 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-    throw new Error('Not implemented');
+    for(let i=0;i<str.length;i++)
+    {
+        if(str.indexOf(str.charAt(i),str.indexOf(str.charAt(i))+1)==-1)
+        {
+            return str.charAt(i);
+        }
+    }
+    return null;
+    //throw new Error('Not implemented');
 }
 
 
@@ -192,7 +218,25 @@ function findFirstSingleChar(str) {
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-    throw new Error('Not implemented');
+    if(isStartIncluded && isEndIncluded)
+    {
+        return a<b? `[${a},${b}]` : `[${b},${a}]`;
+    }
+    else if(isStartIncluded || isEndIncluded)
+    {
+        if(isStartIncluded)
+        {
+            return a<b? `[${a},${b})` : `[${b},${a})`;
+        }
+        else
+        {
+            return a<b? `(${a},${b}]` : `(${b},${a}]`;
+        }
+    }
+    else{
+        return a<b? `(${a},${b})` : `(${b},${a})`;
+    }
+    // throw new Error('Not implemented');
 }
 
 
@@ -209,7 +253,8 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    return [...str].reverse().join('');
+    // throw new Error('Not implemented');
 }
 
 
@@ -226,7 +271,14 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    let rev=0;
+    while(num!==0)
+    {
+        rev=rev*10+num%10;
+        num=Math.floor(num/10);
+    }
+    return rev;8
+    // throw new Error('Not implemented');
 }
 
 
@@ -251,7 +303,19 @@ function reverseInteger(num) {
  *   4916123456789012 => false
  */
 function isCreditCardNumber(ccn) {
-    throw new Error('Not implemented');
+    let nDigits = ccn.length;
+    let nSum = 0;
+    let isSecond = false;
+    for (let i = nDigits - 1; i >= 0; i--){
+            let d = ccn[i].charCodeAt() - '0'.charCodeAt();
+            if (isSecond == true)
+                d = d * 2;
+            nSum += parseInt(d / 10, 10);
+            nSum += d % 10;
+            isSecond = !isSecond;
+    }
+    return (nSum % 10 == 0);
+    // throw new Error('Not implemented');
 }
 
 
@@ -270,7 +334,17 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+    let root=0;
+    while(num!=0 || root>9){
+        if(num===0){
+            num=root;
+            root=0;
+        }
+        root+=num%10;
+        num=Math.floor(num/10);
+    }
+    return root;
+    //throw new Error('Not implemented');
 }
 
 
@@ -296,7 +370,29 @@ function getDigitalRoot(num) {
  *   '{[(<{[]}>)]}' = true 
  */
 function isBracketsBalanced(str) {
-    throw new Error('Not implemented');
+    let stack=[];
+    for(let i=0;i<str.length;i++)
+    {
+        let symbol=str.charAt(i);
+        if(symbol=='[' || symbol=='{' || symbol=='(' || symbol=='<')
+        {
+            stack.push(symbol);
+            continue;
+        }
+        if(stack.length==0) return false;
+        switch(symbol)
+        {
+            case ']': if(stack.pop()!=='[') return false;
+            break;
+            case '}': if(stack.pop()!=='{') return false;
+            break;
+            case ')': if(stack.pop()!=='(') return false;
+            break;
+            case '>': if(stack.pop()!=='<') return false;
+        }
+    }
+    return stack.length===0;
+    // throw new Error('Not implemented');
 }
 
 
