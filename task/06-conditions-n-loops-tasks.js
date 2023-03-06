@@ -278,18 +278,21 @@ function reverseInteger(num) {
  *   4916123456789012 => false
  */
 function isCreditCardNumber(ccn) {
-  let nDigits = ccn.length;
-  let nSum = 0;
-  let isSecond = false;
-  for (let i = nDigits - 1; i >= 0; i--){
-    let d = ccn[i].charCodeAt() - '0'.charCodeAt();
-    if (isSecond == true)
-      d = d * 2;
-    nSum += parseInt(d / 10, 10);
-    nSum += d % 10;
-    isSecond = !isSecond;
-  }
-  return (nSum % 10 == 0);
+  let sum = 0;
+  let str = ccn.toString();
+  let len = str.length;
+  let parity = len % 2;
+  let i = 0;
+  while (i < len) {
+    if (i % 2 != parity)
+      sum = sum + Number(str[i]);
+    else if (Number(str[i]) > 4)
+      sum = sum + 2 * Number(str[i]) - 9;
+    else
+      sum = sum + 2 * Number(str[i]);
+      i += 1;
+    }
+    return sum % 10 == 0;
 }
 
 /**
